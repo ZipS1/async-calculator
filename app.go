@@ -82,7 +82,8 @@ func main() {
 		go CalculateExpression(exp, resultsChannel)
 	}
 
-	for exp := range resultsChannel {
+	for i := 0; i < len(expressions); i++ {
+		exp := <-resultsChannel
 		if exp.HasError() == false {
 			fmt.Printf("%s = %d\n", exp.GetExpression(), exp.GetResult())
 		} else {
