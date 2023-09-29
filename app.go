@@ -69,7 +69,7 @@ func NewExpression(exp ...string) Expression {
 }
 
 func main() {
-	fmt.Print("Input an expression separated with ', ': ")
+	fmt.Print("Input an expressions separated with ', ': ")
 	expressions, err := ReadInput()
 	if err != nil {
 		fmt.Println(err)
